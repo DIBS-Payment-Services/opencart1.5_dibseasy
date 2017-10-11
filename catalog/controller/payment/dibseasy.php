@@ -43,6 +43,7 @@ class ControllerPaymentDibseasy extends Controller {
                                     'payment_postcode' => $response->payment->consumer->shippingAddress->postalCode,
                                     'payment_country_id' => $country_id
                                     );
+                            
                             $orderid = substr($response->payment->orderDetails->reference, 4);
                             $this->model_payment_dibseasy->setAddresses($orderid, $orderUpdate);
                             if($this->config->get('dibseasy_language') == 'sv-SE') {
@@ -60,8 +61,9 @@ class ControllerPaymentDibseasy extends Controller {
                                              . "$paymentType:   <b>{$response->payment->paymentDetails->paymentType}</b> <br>"
                                              . "$paymentMethod: <b>{$response->payment->paymentDetails->paymentMethod}</b> <br>"
                                              . "$cardNumberPostfix: <b>$cardPostfix</b>";
-                            $this->load->model('checkout/order');
-                            $this->model_checkout_order->confirm($this->session->data['order_id'], $this->config->get('dibseasy_order_status_id'), $transactDetails, true);
+                                             
+                            $this->load->model('checkout/dibseasy_order');
+                            $this->model_checkout_dibseasy_order->confirm($this->session->data['order_id'], $this->config->get('dibseasy_order_status_id'), $transactDetails, true);
                             $this->response->redirect($this->url->link('checkout/dibseasy_success', '', true));
                         } else {
                             $this->logger->write('-===============Error during finishiong order==============-----');
@@ -72,8 +74,7 @@ class ControllerPaymentDibseasy extends Controller {
                             $this->logger->write('================================================================');
                             $this->response->redirect($this->url->link('checkout/dibseasy', '', true));
                         }
-                        
-		} else {
+  		} else {
                     $this->response->redirect($this->url->link('checkout/dibseasy', '', true));
                 }
 	}

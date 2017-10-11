@@ -178,7 +178,6 @@ class ModelPaymentDibseasy extends Model {
                                 $order_data['telephone'] = '';
                                 $order_data['fax'] = '';
                                 $order_data['custom_field'] = '';
-                            
                         }
                                 $order_data['payment_firstname'] = '';
                                 $order_data['payment_lastname'] = '';
@@ -377,10 +376,7 @@ class ModelPaymentDibseasy extends Model {
 			$data['column_price'] = $this->language->get('column_price');
 			$data['column_total'] = $this->language->get('column_total');
 
-			
 			$data['products'] = array();
-                        
-                        
                         foreach ($this->cart->getProducts() as $product) {
 				$option_data = array();
 
@@ -441,11 +437,7 @@ class ModelPaymentDibseasy extends Model {
 					'profile_description' => $profile_description,
 				);
 			}
-                     
-                        
-                        
-                        
-
+    
 			// Gift Voucher
 			$data['vouchers'] = array();
 
@@ -501,8 +493,7 @@ class ModelPaymentDibseasy extends Model {
                         );
                  }
               }
-              
-	        $this->session->data['shipping_method'] =  $json['shipping_methods'][$shippingMethod]['quote'][$shippingMethod];
+              $this->session->data['shipping_method'] =  $json['shipping_methods'][$shippingMethod]['quote'][$shippingMethod];
             }
         }
 
@@ -589,8 +580,6 @@ class ModelPaymentDibseasy extends Model {
               $this->logger->write("Curl error:");
               $this->logger->write(curl_error($curl));
             }
-
-
         }
 
         protected function getTotalTaxRate($tax_class_id) {
@@ -693,12 +682,6 @@ class ModelPaymentDibseasy extends Model {
                 ),
                 'merchantNumber' => trim($this->config->get('dibseasy_merchant')),
             );
-            
-            /*
-            echo "<pre>";
-             var_dump($data);
-            echo "</pre>";
-           */
             
             if($this->config->get('dibseasy_debug')) {
                    $this->logger->write("Collected data:");

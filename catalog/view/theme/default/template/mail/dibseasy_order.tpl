@@ -15,6 +15,7 @@
   <p style="margin-top: 0px; margin-bottom: 20px;"><?php echo $text_download; ?></p>
   <p style="margin-top: 0px; margin-bottom: 20px;"><a href="<?php echo $download; ?>"><?php echo $download; ?></a></p>
   <?php } ?>
+  
   <table style="border-collapse: collapse; width: 100%; border-top: 1px solid #DDDDDD; border-left: 1px solid #DDDDDD; margin-bottom: 20px;">
     <thead>
       <tr>
@@ -24,13 +25,14 @@
     <tbody>
       <tr>
         <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;">
-          <b><?php echo $store_name_title; ?></b> <?php echo $store_name; ?><br />
-          <b><?php echo $store_address_title; ?></b> <?php echo $store_address; ?><br />
-          <b><?php echo $store_email_title; ?></b> <?php echo $store_email; ?><br />
-          <b><?php echo $store_phone_title; ?></b> <?php echo $store_phone; ?><br /></td>
+          <?php echo $store_name; ?> <br/>
+          <?php echo $store_address;?> <br/>
+          <?php echo $store_email;?> <br/>
+          <?php echo $store_phone;?> <br/></td>
       </tr>
     </tbody>
   </table>
+  
   <table style="border-collapse: collapse; width: 100%; border-top: 1px solid #DDDDDD; border-left: 1px solid #DDDDDD; margin-bottom: 20px;">
     <thead>
       <tr>
@@ -41,13 +43,13 @@
       <tr>
         <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;"><b><?php echo $text_order_id; ?></b> <?php echo $order_id; ?><br />
           <b><?php echo $text_date_added; ?></b> <?php echo $date_added; ?><br />
+          <b><?php echo $text_payment_method; ?></b> <?php echo $payment_method; ?><br />
           <?php if ($shipping_method) { ?>
           <b><?php echo $text_shipping_method; ?></b> <?php echo $shipping_method; ?>
           <?php } ?></td>
         <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;"><b><?php echo $text_email; ?></b> <?php echo $email; ?><br />
           <b><?php echo $text_telephone; ?></b> <?php echo $telephone; ?><br />
-          <b><?php echo $text_ip; ?></b> <?php echo $ip; ?><br />
-          <b><?php echo $text_order_status; ?></b> <?php echo $order_status; ?><br /></td>
+          <b><?php echo $text_ip; ?></b> <?php echo $ip; ?><br /></td>
       </tr>
     </tbody>
   </table>
@@ -60,11 +62,12 @@
     </thead>
     <tbody>
       <tr>
-        <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;"><?php echo $comment; ?></td>
+        <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;"><?php echo $comment; ?></td>
       </tr>
     </tbody>
   </table>
   <?php } ?>
+  
   <table style="border-collapse: collapse; width: 100%; border-top: 1px solid #DDDDDD; border-left: 1px solid #DDDDDD; margin-bottom: 20px;">
     <thead>
       <tr>
@@ -78,25 +81,22 @@
       <tr>
         <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;"><?php echo $payment_address; ?></td>
         <?php if ($shipping_address) { ?>
-        <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;"><?php echo $shipping_address; ?></td>
+        <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;">
+            <?php echo $shipping_address; ?> <br />
+            Expected delivery date: 2-5 days
+        </td>
         <?php } ?>
       </tr>
     </tbody>
   </table>
+  
   <table style="border-collapse: collapse; width: 100%; border-top: 1px solid #DDDDDD; border-left: 1px solid #DDDDDD; margin-bottom: 20px;">
     <thead>
       <tr>
         <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; background-color: #EFEFEF; font-weight: bold; text-align: left; padding: 7px; color: #222222;"><?php echo $text_product; ?></td>
         <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; background-color: #EFEFEF; font-weight: bold; text-align: left; padding: 7px; color: #222222;"><?php echo $text_model; ?></td>
         <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; background-color: #EFEFEF; font-weight: bold; text-align: right; padding: 7px; color: #222222;"><?php echo $text_quantity; ?></td>
-       <!-- <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; background-color: #EFEFEF; font-weight: bold; text-align: right; padding: 7px; color: #222222;"><?php echo $text_price; ?></td>-->
-        <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; background-color: #EFEFEF; font-weight: bold; text-align: right; padding: 7px; color: #222222;"><?php echo $text_net_price; ?></td>
-            <?php if(isset($taxpercent)) { ?>
-                <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; background-color: #EFEFEF; font-weight: bold; text-align: right; padding: 7px; color: #222222;"><?php echo $text_vat_p; ?></td>
-            <?php  } ?>
-            <?php if(isset($taxfixed)) { ?>
-                <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; background-color: #EFEFEF; font-weight: bold; text-align: right; padding: 7px; color: #222222;"><?php echo $text_vat_f; ?></td>
-            <?php  } ?>
+        <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; background-color: #EFEFEF; font-weight: bold; text-align: right; padding: 7px; color: #222222;"><?php echo $text_price; ?></td>
         <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; background-color: #EFEFEF; font-weight: bold; text-align: right; padding: 7px; color: #222222;"><?php echo $text_total; ?></td>
       </tr>
     </thead>
@@ -110,19 +110,7 @@
           <?php } ?></td>
         <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: left; padding: 7px;"><?php echo $product['model']; ?></td>
         <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: right; padding: 7px;"><?php echo $product['quantity']; ?></td>
-        <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: right; padding: 7px;"><?php echo $product['netprice']; ?></td>
-        <?php if($product['taxproduct']['P']) { ?>
-            <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: right; padding: 7px;"><?php echo $product['taxproduct']['P']; ?></td>
-        <?php } ?>
-        <?php if(!$product['taxproduct']['P'] && isset($taxpercent)) { ?>
-            <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: right; padding: 7px;"></td>
-        <?php } ?>
-        <?php if($product['taxproduct']['F']) { ?>
-            <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: right; padding: 7px;"><?php echo $product['taxproduct']['F']; ?></td>
-        <?php } ?>
-        <?php if(!$product['taxproduct']['F'] && isset($taxfixed)) { ?>
-            <td style="font-size: 12px; border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: right; padding: 7px;"></td>
-        <?php } ?>
+        <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: right; padding: 7px;"><?php echo $product['price']; ?></td>
         <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: right; padding: 7px;"><?php echo $product['total']; ?></td>
       </tr>
       <?php } ?>
@@ -139,12 +127,6 @@
     <tfoot>
       <?php foreach ($totals as $total) { ?>
       <tr>
-         <?php if(isset($taxpercent)) { ?>
-         <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: right; padding: 7px;"></td>      
-         <?php } ?>
-         <?php if(isset($taxfixed)) { ?>
-         <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: right; padding: 7px;"></td> 
-         <?php } ?>
         <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: right; padding: 7px;" colspan="4"><b><?php echo $total['title']; ?>:</b></td>
         <td style="font-size: 12px;	border-right: 1px solid #DDDDDD; border-bottom: 1px solid #DDDDDD; text-align: right; padding: 7px;"><?php echo $total['text']; ?></td>
       </tr>
@@ -152,6 +134,7 @@
     </tfoot>
   </table>
   <p style="margin-top: 0px; margin-bottom: 20px;"><?php echo $text_footer; ?></p>
+  <p style="margin-top: 0px; margin-bottom: 20px;"><?php echo $text_powered; ?></p>
 </div>
 </body>
 </html>

@@ -11,3 +11,5 @@ admin/view/image/payment/dibs.png admin/view/image/payment/dibs.png
 vqmod/xml/dibseasy.ocmod.xml vqmod/xml/dibseasy.ocmod.xml
 catalog/view/theme/default/template/checkout/dibseasy.tpl catalog/view/theme/default/template/checkout/dibseasy.tpl
 catalog/view/theme/default/template/common/dibseasy_success.tpl catalog/view/theme/default/template/common/dibseasy_success.tpl
+catalog/model/checkout/dibseasy_order.php catalog/model/checkout/dibseasy_order.php 
+catalog/language/english/mail/dibseasy_order.php catalog/language/english/mail/dibseasy_order.php 

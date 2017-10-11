@@ -53,7 +53,7 @@
                 </td>
             </tr>
             <tr> 
-                <td><?php echo $entry_shipping_method_description; ?></td>
+                <td><?php echo $entry_shipping_method; ?></td>
                 <td> 
                     <select name="dibseasy_shipping_method" id="input-status" class="form-control">
                         <?php if ($dibseasy_shipping_method == 'free') { ?>
@@ -81,7 +81,7 @@
                 </td>
             </tr>
             <tr> 
-                <td><?php echo $entry_testmode_description; ?></td>
+                <td><?php echo $entry_testmode; ?></td>
                 <td> 
                     <select name="dibseasy_testmode" id="input-status" class="form-control">
                         <?php if ($dibseasy_testmode) { ?>

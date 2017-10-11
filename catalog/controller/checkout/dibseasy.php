@@ -1,5 +1,4 @@
 <?php
-
 class ControllerCheckoutDibseasy extends Controller { 
     public function index() {
         $this->load->language('checkout/checkout');
@@ -59,12 +58,12 @@ class ControllerCheckoutDibseasy extends Controller {
 		}
                 $this->data = array_merge($this->data, $checkoutData);
               	$this->data['shipping_required'] = $this->cart->hasShipping();
-                        if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/dibseasy.tpl')) {
-				$this->template = $this->config->get('config_template') . '/template/checkout/dibseasy.tpl';
-			} else {
-				$this->template = 'default/template/error/not_found.tpl';
-			}
-			$this->children = array(
+                      if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/dibseasy.tpl')) {
+                           $this->template = $this->config->get('config_template') . '/template/checkout/dibseasy.tpl';
+                      } else {
+                		$this->template = 'default/template/error/not_found.tpl';
+		      }
+		      $this->children = array(
 				'common/column_left',
 				'common/column_right',
 				'common/content_top',
@@ -73,6 +72,5 @@ class ControllerCheckoutDibseasy extends Controller {
 				'common/header'	
 			);
                 $this->response->setOutput($this->render());		
-                
     }
 }
