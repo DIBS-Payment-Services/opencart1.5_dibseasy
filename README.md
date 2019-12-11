@@ -1,4 +1,4 @@
-pencart module for DIBS Easy Checkout 
+Opencart module for Easy Checkout 
 [Easy Chekout](http://tech.dibspayment.com/integrationguide)
 
 This module supports only Opencart version (1.5.x)
